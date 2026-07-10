@@ -5,18 +5,21 @@ Id: Fachbereiche
 Title: "Fachbereiche"
 Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
-* ^url = "http://www.ihe-d.de/fhir/CodeSystem/Fachbereiche"
+* ^url = "http://fachbereich.ihe-d.de/fhir/CodeSystem/Fachbereiche"
 * ^version = "4.0.0"
 
 * insert HeaderDetailRules
 
 * ^language = #de-DE
 * ^caseSensitive = true
-* ^valueSet = "http://www.ihe-d.de/fhir/ValueSet/Fachbereiche"
+* ^valueSet = "http://fachbereich.ihe-d.de/fhir/ValueSet/Fachbereiche"
 * ^hierarchyMeaning = #is-a
 * ^compositional = false
 * ^versionNeeded = false
 * ^content = #complete
+
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.1" // Ersetzen Sie dies durch Ihre reale OID
 
 
 * ^property[0].code = #status
@@ -35,42 +38,19 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 * ^property[=].type = #code
 
 * ^property[+].code = #gender
-//  * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
-//  * ^property[=].extension[=].valueCanonical = "http://www.oemig.de/ValueSet/Gender"
+* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+* ^property[=].extension[=].valueCanonical = "http://fachbereich.ihe-d.de/fhir/ValueSet/Gender"
 * ^property[=].uri = "http://fachbereich.ihe-d.de/fhir/CodeSystem/Property#gender"
 * ^property[=].description = "Is there a specific gender assigned?"
 * ^property[=].type = #code
 
 * ^property[+].code = #age
-//  * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
-//  * ^property[=].extension[=].valueCanonical = "http://www.oemig.de/ValueSet/Age"
+* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+* ^property[=].extension[=].valueCanonical = "http://fachbereich.ihe-d.de/fhir/ValueSet/Altersgruppen"
 * ^property[=].uri = "http://fachbereich.ihe-d.de/fhir/CodeSystem/Property#age"
 * ^property[=].description = "Is there a specific age assigned?"
 * ^property[=].type = #code
 
-
-* #gender "Gender assignment"
-  * ^property[+].code = #inactive
-  * ^property[=].valueBoolean = true
-  * #male "male"
-    * ^property[+].code = #inactive
-    * ^property[=].valueBoolean = true
-  * #female "female"
-    * ^property[+].code = #inactive
-    * ^property[=].valueBoolean = true
-  
-* #age "Age assignment"
-  * ^property[+].code = #inactive
-  * ^property[=].valueBoolean = true
-  * #child "children"
-    * ^property[+].code = #inactive
-    * ^property[=].valueBoolean = true
-  * #juvenile "juvenile"
-    * ^property[+].code = #inactive
-    * ^property[=].valueBoolean = true
-  * #elder "elder"
-    * ^property[+].code = #inactive
-    * ^property[=].valueBoolean = true
 
 * #ALGM "Allgemeinmedizin"
 
@@ -463,7 +443,7 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #CHIR
 
-* #PNEUMO "Pneumologie"
+* #PNEUMO "Pneumologie"
 
 * #PHYSIOTH "Physiotherapie"
 
@@ -547,10 +527,14 @@ Id: Fachbereiche
 Title: "Fachbereiche"
 Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
-* ^url = "http://www.ihe-d.de/fhir/ValueSet/Fachbereiche"
+* ^url = "http://fachbereich.ihe-d.de/fhir/ValueSet/Fachbereiche"
 * ^version = "4.0.0"
+
+
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.10.1" // Ersetzen Sie dies durch Ihre reale OID
 
 * insert HeaderDetailRules
 
-* include codes from system http://www.ihe-d.de/fhir/CodeSystem/Fachbereiche
+* include codes from system http://fachbereich.ihe-d.de/fhir/CodeSystem/Fachbereiche
 
