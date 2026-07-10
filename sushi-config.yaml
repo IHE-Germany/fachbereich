@@ -9,7 +9,7 @@ name: fachbereich.ihe-d.de
 title: Fachbereiche
 description: Implementierungsleitfaden für Fachbereiche in Deutschland
 status: draft # draft | active | retired | unknown
-version: 0.2.0
+version: 0.2.1
 date: 2026-07-10
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2026+

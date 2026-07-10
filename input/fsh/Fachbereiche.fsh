@@ -37,6 +37,11 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 * ^property[=].description = "Who is the parent element of this concept? Multiple parents are possible."
 * ^property[=].type = #code
 
+* ^property[+].code = #synonym
+* ^property[=].uri = "http://hl7.org/fhir/concept-properties#synonym"
+* ^property[=].description = "alternative term to use."
+* ^property[=].type = #string
+
 * ^property[+].code = #gender
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://fachbereich.ihe-d.de/fhir/ValueSet/Gender"
@@ -53,11 +58,6 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
 
 * #ALGM "Allgemeinmedizin"
-
-* #ALLCHIR "Allgemeinchirurgie"
-  * ^property[+].code = #parent
-  * ^property[=].valueCode = #CHIR
-
 
 * #ANAE "Anästhesiologie"
 
@@ -90,6 +90,8 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 * #BRONCHO "Lungen- und Bronchialheilkunde"
 
 * #CHIR "Chirurgie"
+  * ^property[+].code = #synonym
+  * ^property[=].valueString = "Allgemeinchirurgie"
 
 * #DERMA "Dermatologie und Venerologie"
 
@@ -374,6 +376,10 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
   * ^property[=].valueCode = #CHIR
 
 * #NEONATAL "Neonatologie" 
+  * ^property[+].code = #parent
+  * ^property[=].valueCode = #PAED
+  * ^property[+].code = #age
+  * ^property[=].valueCode = #child
 
 * #NEURO "Neurologie"
 
