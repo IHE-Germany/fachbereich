@@ -25,3 +25,12 @@ Properties:
 
 Als Zwischenlösung stellt dieser Leitfaden alle Codesysteme erstmal selbst bereit. 
 Mit weiteren Ausbaustufen sollte sich das ändern.
+
+## Anmerkung
+
+Es sind Vorschläge gemacht worden für folgende "Fachbereiche", 
+die aber kein Fachbereich im eigentlichen Sinn darstellen,
+sondern eher als Rollen gehandhabt werden müssen:
+
+* Hausarzt
+* Kinderarzt

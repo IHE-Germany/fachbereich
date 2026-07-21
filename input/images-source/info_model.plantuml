@@ -1,0 +1,42 @@
+@startuml
+
+abstract class "Org" as org
+
+org .left. org
+
+class "administrativ" as adm
+
+class "klinisch" as klin {
+    typ
+}
+
+class "Fachabteilung" as fabt
+
+class "Verwaltung" as verw
+class "Technik" as technik
+
+org <|-- adm
+org <|-- klin
+org <|-- einr
+klin <|-- fabt
+adm <|-- verw
+adm <|-- technik
+
+class "Einrichtung" as einr {
+    IK-Nummer
+    name
+}
+
+class "Standort" as ort {
+    id
+    adresse
+    gps
+}
+
+einr -left- ort : > hat Standort
+
+class "Fachbereich" as fachb
+
+fabt -- fachb
+
+@enduml
