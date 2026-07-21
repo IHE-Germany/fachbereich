@@ -39,7 +39,8 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
 * ^property[+].code = #synonym
 * ^property[=].uri = "http://hl7.org/fhir/concept-properties#synonym"
-* ^property[=].description = "alternative term to use."
+* ^property[=].description = "This property contains an alternative code that may be used to identify this concept instead of the primary code."
+//* ^property[=].type = #code
 * ^property[=].type = #string
 
 * ^property[+].code = #gender
@@ -57,7 +58,11 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 * ^property[=].type = #code
 
 
-* #ALGM "Allgemeinmedizin"
+* #ALGMED "Allgemeinmedizin"
+
+* #ALGCHIR "Allgemeinchirurgie"
+//  * ^property[+].code = #synonym
+//  * ^property[=].valueCode = #CHIR
 
 * #ANAE "Anästhesiologie"
 
@@ -90,8 +95,10 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 * #BRONCHO "Lungen- und Bronchialheilkunde"
 
 * #CHIR "Chirurgie"
+//  * ^property[+].code = #synonym
+//  * ^property[=].valueCode = #ALGCHIR
   * ^property[+].code = #synonym
-  * ^property[=].valueString = "Allgemeinchirurgie"
+  * ^property[=].valueString = "Allgemeinchuírurgie"
 
 * #DERMA "Dermatologie und Venerologie"
 
