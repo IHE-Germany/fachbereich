@@ -1,18 +1,18 @@
 //CodeSystem
 
-CodeSystem: FachbereicheCS
-Id: Fachbereiche
-Title: "Fachbereiche"
-Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
+CodeSystem: FachbereicheKlinischCS
+Id: FachbereicheKlinisch
+Title: "klinische Fachbereiche"
+Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
-* ^url = "http://fachbereich.ihe-d.de/fhir/CodeSystem/Fachbereiche"
+* ^url = "http://fachbereich.ihe-d.de/fhir/CodeSystem/FachbereicheKlinisch"
 * ^version = "4.0.0"
 
 * insert HeaderDetailRules
 
 * ^language = #de-DE
 * ^caseSensitive = true
-* ^valueSet = "http://fachbereich.ihe-d.de/fhir/ValueSet/Fachbereiche"
+* ^valueSet = "http://fachbereich.ihe-d.de/fhir/ValueSet/FachbereicheKlinisch"
 * ^hierarchyMeaning = #is-a
 * ^compositional = false
 * ^versionNeeded = false
@@ -27,7 +27,7 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 * ^property[=].description = "Status"
 * ^property[=].type = #code
 
-* ^property[0].code = #inactive
+* ^property[+].code = #inactive
 * ^property[=].uri = "http://hl7.org/fhir/concept-properties#inactive"
 * ^property[=].description = "inactive"
 * ^property[=].type = #boolean
@@ -36,12 +36,6 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 * ^property[=].uri = "http://hl7.org/fhir/concept-properties#parent"
 * ^property[=].description = "Who is the parent element of this concept? Multiple parents are possible."
 * ^property[=].type = #code
-
-* ^property[+].code = #synonym
-* ^property[=].uri = "http://hl7.org/fhir/concept-properties#synonym"
-* ^property[=].description = "This property contains an alternative code that may be used to identify this concept instead of the primary code."
-//* ^property[=].type = #code
-* ^property[=].type = #string
 
 * ^property[+].code = #gender
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
@@ -59,10 +53,6 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
 
 * #ALGMED "Allgemeinmedizin"
-
-* #ALGCHIR "Allgemeinchirurgie"
-//  * ^property[+].code = #synonym
-//  * ^property[=].valueCode = #CHIR
 
 * #ANAE "Anästhesiologie"
 
@@ -88,17 +78,13 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
 * #BIO "Biochemie"
 
-* #BLUT "Blutspendewesen"
-  * ^property[+].code = #parent
-  * ^property[=].valueCode = #LABOR
-
 * #BRONCHO "Lungen- und Bronchialheilkunde"
 
-* #CHIR "Chirurgie"
-//  * ^property[+].code = #synonym
-//  * ^property[=].valueCode = #ALGCHIR
-  * ^property[+].code = #synonym
-  * ^property[=].valueString = "Allgemeinchuírurgie"
+* #CHIR "Chirurgie" "Chirurgie"
+  * ^designation[+].language = #de
+//  * ^designation[=].use.system = "http://hl7.org"
+//  * ^designation[=].use.code = #synonym
+  * ^designation[=].value = "Allgemeinchirurgie"
 
 * #DERMA "Dermatologie und Venerologie"
 
@@ -184,7 +170,7 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
 * #INAM "Innere und Allgemeinmedizin (Hausarzt)"
   * ^property[+].code = #parent
-  * ^property[=].valueCode = #ALGM
+  * ^property[=].valueCode = #ALGMED
 
 * #IMMUNO "Immunologie"
 
@@ -202,7 +188,7 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
 * #INTENSIV "Intensivtherapie"
 
-* #JUCHIR "Jugendchirurgie"
+* #JUCHIR "Jugend-Chirurgie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #CHIR
   * ^property[+].code = #age
@@ -222,19 +208,19 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
   * ^property[+].code = #age
   * ^property[=].valueCode = #juvenile
 
-* #JUPSYCHOTH "Jugendpsychotherapie"
+* #JUPSYCHOTH "Jugend-Psychotherapie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PSYCHOTH
   * ^property[+].code = #age
   * ^property[=].valueCode = #juvenile
 
-* #JUPSYCHIA "Jugendpsychiatrie"
+* #JUPSYCHIA "Jugend-Psychiatrie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PSYCHIA
   * ^property[+].code = #age
   * ^property[=].valueCode = #juvenile
 
-* #JURAD "Jugendradiologie" 
+* #JURAD "Jugend-Radiologie" 
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
   * ^property[+].code = #parent
@@ -256,7 +242,7 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #ZAHN
 
-* #KICHIR "Kinderchirurgie"
+* #KICHIR "Kinder-Chirurgie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #CHIR
   * ^property[+].code = #parent
@@ -264,35 +250,21 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
   * ^property[+].code = #age
   * ^property[=].valueCode = #child
 
-* #KIDIAB "Kinderdiabetologie"
+* #KIDIAB "Kinder-Diabetologie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
 
-* #KIHAEMA "Kinderhämatologie" 
-  * ^property[+].code = #parent
-  * ^property[=].valueCode = #PAED
-  * ^property[+].code = #parent
-  * ^property[=].valueCode = #HAEMA
-
-* #KIHAEM "Kinder-Hämatologie und -Onkologie"
+* #KIHAEMA "Kinder-Hämatologie" 
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
   * ^property[+].code = #parent
   * ^property[=].valueCode = #HAEMA
-  * ^property[+].code = #parent
-  * ^property[=].valueCode = #ONKO
-  * ^property[+].code = #age
-  * ^property[=].valueCode = #child
 
-* #KIGASTROENT "Kindergastroenterologie" 
+* #KIGASTROENT "Kinder-Gastroenterologie" 
   * ^property[+].code = #age
   * ^property[=].valueCode = #child
   * ^property[+].code = #parent
   * ^property[=].valueCode = #GASTRO
-
-* #KIPNEUO "Kinderpneumologie" 
-  * ^property[+].code = #parent
-  * ^property[=].valueCode = #PAED
 
 * #KIKARDIO "Kinder-Kardiologie"
   * ^property[+].code = #parent
@@ -302,19 +274,19 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
   * ^property[+].code = #age
   * ^property[=].valueCode = #child
 
-* #KILUNG "Kinderlungen- und -bronchialheilkunde" 
+* #KILUNG "Kinder-Lungen- und -bronchialheilkunde" 
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
   * ^property[+].code = #age
   * ^property[=].valueCode = #child
 
-* #KINEURONATAL "Kinderneonatologie"
+* #KINEURONATAL "Kinder-Neonatologie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
   * ^property[+].code = #age
   * ^property[=].valueCode = #child
 
-* #KINEPHRO "Kindernephrologie" 
+* #KINEPHRO "Kinder-Nephrologie" 
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
   * ^property[+].code = #parent
@@ -322,7 +294,7 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
   * ^property[+].code = #age
   * ^property[=].valueCode = #child
 
-* #KINEUPPSYCHIA "Kinderneuropsychiatrie" 
+* #KINEUPPSYCHIA "Kinder-Neuropsychiatrie" 
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
   * ^property[+].code = #parent
@@ -330,7 +302,19 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
   * ^property[+].code = #age
   * ^property[=].valueCode = #child
 
-* #KIPSYCHOTH "Kinderpsychotherapie"
+* #KIONKO "Kinder-Onkologie"
+  * ^property[+].code = #parent
+  * ^property[=].valueCode = #PAED
+  * ^property[+].code = #parent
+  * ^property[=].valueCode = #ONKO
+  * ^property[+].code = #age
+  * ^property[=].valueCode = #child
+
+* #KIPNEUO "Kinder-Pneumologie" 
+  * ^property[+].code = #parent
+  * ^property[=].valueCode = #PAED
+
+* #KIPSYCHOTH "Kinder-Psychotherapie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
   * ^property[+].code = #parent
@@ -338,7 +322,7 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
   * ^property[+].code = #age
   * ^property[=].valueCode = #child
 
-* #KIPSYCHIA "Kinderpsychiatrie"
+* #KIPSYCHIA "Kinder-Psychiatrie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
   * ^property[+].code = #parent
@@ -352,7 +336,7 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
   * ^property[+].code = #age
   * ^property[=].valueCode = #child
 
-* #KIRAD "Kinderradiologie"
+* #KIRAD "Kinder-Radiologie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
   * ^property[+].code = #parent
@@ -396,15 +380,15 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #NEURO
 
-* #NEURAD "Neuroradiologie" 
-  * ^property[+].code = #parent
-  * ^property[=].valueCode = #RAD
-
 * #NEUROPAED "Neuropädiatrie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
   * ^property[+].code = #parent
   * ^property[=].valueCode = #NEURO
+
+* #NEURAD "Neuroradiologie" 
+  * ^property[+].code = #parent
+  * ^property[=].valueCode = #RAD
 
 * #NUCLEAR "Nuklearmedizin"
 
@@ -425,8 +409,6 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 * #PHARMA "Pharmakologie"
 
 * #PODO "Podologie"
-
-* #PUBHEALTH "Öffentliches Gesundheitswesen"
 
 * #PARTHBIO "Pathobiochemie und Labordiagnostik"
   * ^property[+].code = #parent
@@ -535,12 +517,12 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
 //ValueSet
 
-ValueSet: FachbereicheVS
-Id: Fachbereiche
-Title: "Fachbereiche"
-Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
+ValueSet: FachbereicheKlinischVS
+Id: FachbereicheKlinisch
+Title: "klinische Fachbereiche"
+Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
-* ^url = "http://fachbereich.ihe-d.de/fhir/ValueSet/Fachbereiche"
+* ^url = "http://fachbereich.ihe-d.de/fhir/ValueSet/FachbereicheKlinisch"
 * ^version = "4.0.0"
 
 
@@ -549,5 +531,5 @@ Description: "**Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
 * insert HeaderDetailRules
 
-* include codes from system http://fachbereich.ihe-d.de/fhir/CodeSystem/Fachbereiche
+* include codes from system http://fachbereich.ihe-d.de/fhir/CodeSystem/FachbereicheKlinisch
 

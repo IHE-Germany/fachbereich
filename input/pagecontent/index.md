@@ -15,7 +15,8 @@ in den Einsatz zu kommen.
 Die Intention ist hier ein Codesystem zu entwickeln, das als einfache Ontologie mit flacher
 Hierarchie alle benötigten Fachbereiche enthält.
 
-Das [Codesystem](Codesystem-Fachbereiche.html) enthält Properties (Eigenschaften), um die Code zu annotieren bzw. zu verlinken.
+Das [Codesystem](Codesystem-FachbereicheKlinisch.html) enthält Properties (Eigenschaften), 
+um die Codes zu annotieren bzw. zu verlinken.
 
 Properties:
 
