@@ -21,8 +21,9 @@ Description: "**Property**"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.2" // Ersetzen Sie dies durch Ihre reale OID
 
-* #age "age" "age"
-* #gender "gender" "gender"
+* #age "Alter" "Altersklasse"
+* #gender "Geschlecht" "primäre Geschlechtsassoziation für den Fachbereich, unabhänging von der exakten Geschlechtsdefinition"
+* #disziplin "Disziplin" "Disziplin"
   
 
 //ValueSet

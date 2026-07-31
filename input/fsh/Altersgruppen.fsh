@@ -22,10 +22,22 @@ Description: "**Altersgruppen** zur Attributierung der Fachbereiche"
 * ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.3" // Ersetzen Sie dies durch Ihre reale OID
 
  
-* #baby "baby/newborn" "baby or newborn"
-* #child "children" "children"
-* #juvenile "juvenile" "juveniles or elder children"
-* #elder "elder" "elderly people/seniors"
+* #juvenile "jugendlich" "<18 Jahre"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "juvenile"
+  * #child "Kind" "children"
+    * ^designation[+].language = #en
+    * ^designation[=].value = "child"
+    * #baby "Baby" "Kind <1 Jahre"
+      * ^designation[+].language = #en
+      * ^designation[=].value = "baby"
+      * #newborn "Neugeborenes" "Baby <3 Monate"
+        * ^designation[+].language = #en
+        * ^designation[=].value = "newborn"
+* #adult "Erwachsener"
+* #elder "Senior" "elderly people/seniors"
+  * ^designation[+].language = #en
+  * ^designation[=].value = ">60 Jahre"
 
 
 

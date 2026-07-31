@@ -37,6 +37,11 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
 * ^property[=].description = "Who is the parent element of this concept? Multiple parents are possible."
 * ^property[=].type = #code
 
+* ^property[+].code = #comment
+* ^property[=].uri = "http://www.hl7.org/fhir/StructureDefinition/valueset-concept-comments"
+* ^property[=].description = "Comment"
+* ^property[=].type = #string
+
 * ^property[+].code = #gender
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://fachbereich.ihe-d.de/fhir/ValueSet/Gender"
@@ -51,62 +56,101 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
 * ^property[=].description = "Is there a specific age assigned?"
 * ^property[=].type = #code
 
+* ^property[+].code = #disziplin
+* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+* ^property[=].extension[=].valueCanonical = "http://fachbereich.ihe-d.de/fhir/ValueSet/Grunddisziplin"
+* ^property[=].uri = "http://fachbereich.ihe-d.de/fhir/CodeSystem/Property#disziplin"
+* ^property[=].description = "specifc discipline"
+* ^property[=].type = #code
 
-* #ALGMED "Allgemeinmedizin"
 
-* #ANAE "Anästhesiologie"
+* #ALGMED "Allgemeinmedizin" "Allgemeinmedizin"
 
-* #ANGIO "Angiologie"
+* #ANAE "Anästhesiologie" "Anästhesiologie"
 
-* #ARHY "Arbeitshygiene"
+* #ANGIO "Angiologie" "Angiologie"
 
-* #ANAT "Anatomie"
+* #ARHY "Arbeitshygiene" "Arbeitshygiene"
 
-* #ANAPATH "Pathologische Anatomie"
+* #ANAT "Anatomie" "Anatomie"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Anatomy"
+
+* #ANAPATH "Pathologische Anatomie" "Pathologische Anatomie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PATH
   * ^property[+].code = #parent
   * ^property[=].valueCode = #ANAT
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Pathological Anatomy"
 
-* #ARME "Arbeitsmedizin"
+* #ARME "Arbeitsmedizin" "Arbeitsmedizin"
 
-* #AESTCHIR "Ästhetische Chirurgie"
+* #AESTCHIR "Ästhetische Chirurgie" "Ästhetische Chirurgie"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Ästhetische Chirurgie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #CHIR
 
-* #AUGE "Augenheilkunde"
+* #AUGE "Augenheilkunde" "Augenheilkunde"
 
-* #BIO "Biochemie"
+* #BIO "Biochemie" "Biochemie"
 
-* #BRONCHO "Lungen- und Bronchialheilkunde"
+* #BRONCHO "Lungen- und Bronchialheilkunde" "Pulmonologie"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Pulmonologie"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Pulmonology"
 
 * #CHIR "Chirurgie" "Chirurgie"
   * ^designation[+].language = #de
 //  * ^designation[=].use.system = "http://hl7.org"
 //  * ^designation[=].use.code = #synonym
   * ^designation[=].value = "Allgemeinchirurgie"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Surgery"
 
 * #DERMA "Dermatologie und Venerologie"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Dermatologie"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Dermatology"
 
-* #DIAET "Diätologie (Diätetik)"
+* #DIAET "Diätologie" "Diätologie (Diätetik)"
 
-* #DIAGRAD "Diagnostische Radiologie"
+* #DIAGRAD "Diagnostische Radiologie" "Diagnostische Radiologie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #RAD
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Radiologie"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Radiology"
 
-* #ECHO "Echokardiologie herznaher Gefäße"
+* #ECHO "Echokardiologie" "Echokardiologie herznaher Gefäße"
 
-* #ENDOKRIN "Endokrinologie und Diabetologie"
+* #ENDOKRIN "Endokrinologie und Diabetologie" "Endokrinologie und Diabetologie"
+  * ^property[+].code = #comment
+  * ^property[=].valueString = "trennen?"
 
 * #EPI "Epidemiologie"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Epidemiologie"
 
 * #ERGO "Ergotherapie"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Ergotherapie"
 
 * #FORENSIK "Forensische Psychiatrie"
+  * ^property[+].code = #comment
+  * ^property[=].valueString = "passt das so?"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Psychiatrie"
 
 * #FRAU "Frauenheilkunde"
   * ^property[+].code = #gender
   * ^property[=].valueCode = #female
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Frauenheilkunde"
 
 * #GASTRO "Gastroenterologie"
 
@@ -114,7 +158,7 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
   * ^property[+].code = #parent
   * ^property[=].valueCode = #ENDOKRIN
   * ^property[+].code = #age
-  * ^property[=].valueCode = #child
+  * ^property[=].valueCode = #juvenile
 
 * #KIGASTRO "Gastroenterologie in der Kinder- und Jugendmedizin"
   * ^property[+].code = #parent
@@ -147,6 +191,8 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
   * ^property[=].valueCode = #GYN
   * ^property[+].code = #parent
   * ^property[=].valueCode = #ENDOKRIN
+  * ^property[+].code = #comment
+  * ^property[=].valueString = "trennen?"
 
 * #GYNONKO "Gynäkologische Onkologie"
   * ^property[+].code = #parent
@@ -168,9 +214,11 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
 
 * #HYG "Hygiene"
 
-* #INAM "Innere und Allgemeinmedizin (Hausarzt)"
+* #INAM "Innere und Allgemeinmedizin"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #ALGMED
+  * ^property[+].code = #comment
+  * ^property[=].valueString = "Hausarzt -> Rolle"
 
 * #IMMUNO "Immunologie"
 
@@ -236,7 +284,7 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
   * ^property[+].code = #parent
   * ^property[=].valueCode = #KARDIO
 
-* #KIEFCHIR "Kieferchirurgie"
+* #KIEFCHIR "Kiefer-Chirurgie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #CHIR
   * ^property[+].code = #parent
@@ -251,10 +299,14 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
   * ^property[=].valueCode = #child
 
 * #KIDIAB "Kinder-Diabetologie"
+  * ^property[+].code = #age
+  * ^property[=].valueCode = #child
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
 
 * #KIHAEMA "Kinder-Hämatologie" 
+  * ^property[+].code = #age
+  * ^property[=].valueCode = #child
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
   * ^property[+].code = #parent
@@ -334,7 +386,7 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
 
 * #KIPULMO "Pulmologie in der Kinder- und Jugendmedizin" 
   * ^property[+].code = #age
-  * ^property[=].valueCode = #child
+  * ^property[=].valueCode = #juvenile
 
 * #KIRAD "Kinder-Radiologie"
   * ^property[+].code = #parent
@@ -359,6 +411,8 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
 * #MUKIEFCHIR "Mund-Kiefer-Gesichtschirurgie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #KIEFCHIR
+  * ^property[+].code = #comment
+  * ^property[=].valueString = "Viszeralchirurgie?"
 
 * #NEPHRO "Nephrologie"
 
@@ -407,6 +461,8 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
 * #PALLIA "Palliativmedizin"
 
 * #PHARMA "Pharmakologie"
+
+* #PHLEBO "Phlebologie" "Venenkrankheiten"
 
 * #PODO "Podologie"
 
@@ -469,6 +525,8 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
   * ^property[=].valueCode = #female
   * ^property[+].code = #parent
   * ^property[=].valueCode = #GEB
+  * ^property[+].code = #age
+  * ^property[=].valueCode = #newborn
 
 * #RECHT "Rechtsmedizin"
 
@@ -485,32 +543,46 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
   * ^property[=].valueCode = #RAD
 
 * #TIER "Tier-/Veterinärmedizin"
+  * ^property[+].code = #disziplin
+  * ^property[=].valueCode = #tier
+  * ^property[+].code = #comment
+  * ^property[=].valueString = "weitere Spezialisierungen?"
 
 * #TRANSF "Transfusionsmedizin"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #LABOR
 
-* #THOCHIR "Thoraxchirurgie"
+* #THOCHIR "Thorax-Chirurgie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #CHIR
 
 * #TOXI "Toxikologie"
 
-* #VISCHIR "Viszeralchirurgie"
+* #VENERO "Venerologie" "Infektions- und Geschlechtskrankheiten"
+
+* #VISCHIR "Viszeralchirurgie" "Viszeralchirurgie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #CHIR
 
-* #UMWELT "Umweltmedizin"
+* #UMWELT "Umweltmedizin" "Umweltmedizin"
 
-* #UNFCHIR "Unfallchirurgie"
+* #UNFCHIR "Unfallchirurgie" "Unfallchirurgie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #CHIR
 
-* #URO "Urologie"
+* #URO "Urologie" "Urologie"
 
-* #VIRO "Virologie"
+* #VIRO "Virologie" "Virologie"
 
-* #ZAHN "Zahnmedizin"
+* #WIRBCHIR "Wirbelsäulenchirurgie" "Wirbelsäulenchirurgie"
+  * ^property[+].code = #parent
+  * ^property[=].valueCode = #CHIR
+  * ^property[+].code = #parent
+  * ^property[=].valueCode = #ORTHO
+
+* #ZAHN "Zahnmedizin" "Zahnmedizin"
+  * ^property[+].code = #disziplin
+  * ^property[=].valueCode = #zahn
 
 
 
