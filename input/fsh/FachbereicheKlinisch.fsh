@@ -2,7 +2,7 @@
 
 CodeSystem: FachbereicheKlinischCS
 Id: FachbereicheKlinisch
-Title: "klinische Fachbereiche"
+Title: "Fachbereiche, klinisch"
 Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
 * ^url = "http://fachbereich.ihe-d.de/fhir/CodeSystem/FachbereicheKlinisch"
@@ -591,7 +591,7 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
 
 ValueSet: FachbereicheKlinischVS
 Id: FachbereicheKlinisch
-Title: "klinische Fachbereiche"
+Title: "Fachbereiche, klinisch"
 Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
 * ^url = "http://fachbereich.ihe-d.de/fhir/ValueSet/FachbereicheKlinisch"
@@ -603,5 +603,20 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
 
 * insert HeaderDetailRules
 
-* include codes from system http://fachbereich.ihe-d.de/fhir/CodeSystem/FachbereicheKlinisch
+* include codes from system FachbereicheKlinisch
+
+
+
+//ValueSet: TestFemale
+//Id: TestFemale
+//Title: "Test female"
+//Description: "**Test female**"
+
+//* ^url = "http://fachbereich.ihe-d.de/fhir/ValueSet/TestFemale"
+//* ^version = "0.1.0"
+
+
+//* insert HeaderDetailRules
+
+//* include codes from system FachbereicheKlinisch where gender = "female"
 

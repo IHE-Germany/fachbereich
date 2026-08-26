@@ -19,7 +19,7 @@ Description: "**Property**"
 * ^content = #complete
 
 * ^identifier.system = "urn:ietf:rfc:3986"
-* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.2" // Ersetzen Sie dies durch Ihre reale OID
+* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.9.7" // Ersetzen Sie dies durch Ihre reale OID
 
 * #age "Alter" "Altersklasse"
 * #gender "Geschlecht" "primäre Geschlechtsassoziation für den Fachbereich, unabhänging von der exakten Geschlechtsdefinition"
@@ -37,7 +37,7 @@ Description: "**Property**"
 * ^version = "4.0.0"
 
 * ^identifier.system = "urn:ietf:rfc:3986"
-* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.10.2" // Ersetzen Sie dies durch Ihre reale OID
+* ^identifier.value = "urn:oid:1.2.3.4.5.6.7.8.10.7" // Ersetzen Sie dies durch Ihre reale OID
 
 * insert HeaderDetailRules
 

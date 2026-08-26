@@ -2,7 +2,7 @@
 
 CodeSystem: FachbereicheAdministrativCS
 Id: FachbereicheAdministrativ
-Title: "administrative Fachbereiche"
+Title: "Fachbereiche, administrativ"
 Description: "**administrative Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
 * ^url = "http://fachbereich.ihe-d.de/fhir/CodeSystem/FachbereicheAdministrativ"
@@ -38,7 +38,7 @@ Description: "**administrative Fachbereiche** für den Einsatz im deutschen Gesu
 
 ValueSet: FachbereicheAdministrativVS
 Id: FachbereicheAdministrativ
-Title: "administrative Fachbereiche"
+Title: "Fachbereiche, administrativ"
 Description: "**administrative Fachbereiche** für den Einsatz im deutschen Gesundheitswesen"
 
 * ^url = "http://fachbereich.ihe-d.de/fhir/ValueSet/FachbereicheAdministrativ"
