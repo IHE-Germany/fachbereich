@@ -82,6 +82,10 @@ pages:
 menu:
   Home: index.html
   Informationsmodell: informationsmodell.html
+  Codesysteme:
+    Fachbereiche, klinisch: CodeSystem-FachbereicheKlinisch.html
+    Fachbereiche, administrativ: CodeSystem-FachbereicheAdministrativ.html
+    Funktionsbereiche: CodeSystem-Funktionsbereiche.html
   Artifacts: artifacts.html
   Download: download.html
 

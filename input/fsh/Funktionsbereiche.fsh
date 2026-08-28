@@ -59,7 +59,19 @@ Description: "**Funktionsbereiche** für den Einsatz im deutschen Gesundheitswes
 
 * #LOGO "Logopädie" "Logopädie"
 
+* #VERW "Verwaltung" "Verwaltung"
+  * #AUFN "Aufnahme" "Patientenaufnahme"
+  * #ABR "Abrechnung" "Abrechnung"
+  * #PERS "Personal"
+  * #LAGER "Lager" "Lagerhaltung und Logistik"
+  * #KUECHE "Küche"
+  * #APOTHEKE "Apotheke"
+  * #EINKAUF "Einkauf"
+  * #TRANSPORT "Patiententransport"
 
+* #TECHNIK "Technik" "Technik"  
+  * #IT "IT" "Informationstechnik"  
+  
 
 //ValueSet
 
