@@ -96,12 +96,6 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
 
 * #BIO "Biochemie" "Biochemie"
 
-* #BRONCHO "Lungen- und Bronchialheilkunde" "Pulmonologie"
-  * ^designation[+].language = #de
-  * ^designation[=].value = "Pulmonologie"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Pulmonology"
-
 * #CHIR "Chirurgie" "Chirurgie"
   * ^designation[+].language = #de
 //  * ^designation[=].use.system = "http://hl7.org"
@@ -227,6 +221,8 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
   * ^property[=].valueCode = #TOXI
 
 * #INFEKT "Infektions- und Tropenmedizin"
+  * ^property[+].code = #comment
+  * ^property[=].valueString = "trennen?"
 
 * #INFEKTIO "Infektiologie"
 
@@ -283,6 +279,8 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
   * ^property[=].valueCode = #CHIR
   * ^property[+].code = #parent
   * ^property[=].valueCode = #KARDIO
+  * ^property[+].code = #comment
+  * ^property[=].valueString = "???"
 
 * #KIEFCHIR "Kiefer-Chirurgie"
   * ^property[+].code = #parent
@@ -384,7 +382,7 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
 
 * #KLINPHARMA "Klinische Pharmakologie"
 
-* #KIPULMO "Pulmologie in der Kinder- und Jugendmedizin" 
+* #KIPULMO "Pulmonologie in der Kinder- und Jugendmedizin" 
   * ^property[+].code = #age
   * ^property[=].valueCode = #juvenile
 
@@ -408,7 +406,7 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
   * ^property[+].code = #parent
   * ^property[=].valueCode = #LABOR
 
-* #MUKIEFCHIR "Mund-Kiefer-Gesichtschirurgie"
+* #MUKIEFCHIR "Mund-, Kiefer-, Gesichtschirurgie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #KIEFCHIR
   * ^property[+].code = #comment
@@ -466,11 +464,13 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
 
 * #PODO "Podologie"
 
-* #PARTHBIO "Pathobiochemie und Labordiagnostik"
+* #PATHBIO "Pathobiochemie und Labordiagnostik"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #LABOR
+  * ^property[+].code = #comment
+  * ^property[=].valueString = "aufteilen?"
 
-* #PARODONT "Parodontolgie"
+* #PARODONT "Parodontologie"
   * ^property[+].code = #parent
   * ^property[=].valueCode = #ZAHN
 
@@ -480,7 +480,7 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PHYSIO
 
-* #PEADRHEM "Pädiatrische Rheumatologie" 
+* #PAEDRHEM "Pädiatrische Rheumatologie" 
   * ^property[+].code = #parent
   * ^property[=].valueCode = #PAED
   * ^property[+].code = #parent
@@ -505,6 +505,14 @@ Description: "**klinische Fachbereiche** für den Einsatz im deutschen Gesundhei
 * #PSYCHOTH "Psychotherapie"
 
 * #PSYCHOSOMA "Psychosomatische Medizin und Psychotherapie"
+  * ^property[+].code = #comment
+  * ^property[=].valueString = "aufteilen?"
+
+* #PULMO "Lungen- und Bronchialheilkunde" "Pulmonologie"
+  * ^designation[+].language = #de
+  * ^designation[=].value = "Pulmonologie"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Pulmonology"
 
 * #RAD "Radiologie"
 
